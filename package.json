@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "redis": "^2.8.0",
+    "socket.io": "^2.1.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
