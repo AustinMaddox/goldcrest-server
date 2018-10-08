@@ -1,7 +1,5 @@
-let http = require('http');
-let server = http.createServer();
+let server = require('http').createServer();
 let io = require('socket.io')(server);
-let port = process.env.PORT || 8001;
 
 let redis = require('redis');
 let redis_pub_client = redis.createClient('redis://redis-4-0:6379');
@@ -10,8 +8,8 @@ let redis_sub_client = redis.createClient('redis://redis-4-0:6379');
 const CHANNEL = 'test-channel';
 
 // Server
-server.listen(port, function () {
-    console.log('Server listening on port %d...', port);
+server.listen(8001, function () {
+    console.log('Server listening on port %d...', 8001);
 });
 
 // Redis subscriber.
