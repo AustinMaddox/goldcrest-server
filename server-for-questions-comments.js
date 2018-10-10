@@ -15,15 +15,15 @@ io.on('connection', function (socket) {
 
     // Questions
     socket.on(CHANNEL_QUESTIONS, function (message) {
-        console.log('A socket.io message was received that says `%s`', message);
+        console.log('A socket.io QUESTION message was received that says `%s`', message);
         io.sockets.emit(CHANNEL_QUESTIONS, message);
-        console.log('A socket.io message was emitted that says `%s`', message);
+        console.log('A socket.io QUESTION message was emitted that says `%s`', message);
     });
 
     // Comments
     socket.on(CHANNEL_COMMENTS, function (message) {
-        console.log('A socket.io message was received that says `%s`', message);
+        console.log('A socket.io COMMENT message was received that says `%s`', message);
         io.sockets.emit(CHANNEL_COMMENTS, message);
-        console.log('A socket.io message was emitted that says `%s`', message);
+        console.log('A socket.io COMMENT message was emitted that says `%s`', message);
     });
 });
