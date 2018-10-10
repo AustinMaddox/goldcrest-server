@@ -5,7 +5,7 @@ let redis = require('redis');
 // let redis_pub_client = redis.createClient('redis://redis-4-0:6379');
 let redis_sub_client = redis.createClient('redis://redis-4-0:6379');
 
-const CHANNEL = 'test-channel';
+const CHANNEL = 'channel-for-demos';
 
 // Server
 server.listen(8001, function () {
