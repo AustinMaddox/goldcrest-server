@@ -12,15 +12,6 @@ server.listen(8001, function () {
     console.log('Server listening on port %d...', 8001);
 });
 
-// Redis subscriber.
-redis_sub_client.subscribe(CHANNEL);
-
-redis_sub_client.on('message', function (channel, message) {
-    console.log('Redis subscriber received a message on channel `%s` channel that says `%s`.', channel, message);
-    io.sockets.emit(channel, message);
-    console.log('Redis subscriber emitted the message to the `%s` channel that says `%s`.', channel, message);
-});
-
 // Socket.io
 io.on('connection', function (socket) {
     console.log('A socket.io client connected at ' + Date());
@@ -31,4 +22,13 @@ io.on('connection', function (socket) {
         // redis_pub_client.publish(CHANNEL, message);
         // console.log('A socket.io message was published to Redis that says `%s`', message);
     });
+});
+
+// Redis subscriber.
+redis_sub_client.subscribe(CHANNEL);
+
+redis_sub_client.on('message', function (channel, message) {
+    console.log('Redis subscriber received a message on channel `%s` channel that says `%s`.', channel, message);
+    io.sockets.emit(channel, message);
+    console.log('Redis subscriber emitted the message to the `%s` channel that says `%s`.', channel, message);
 });
