@@ -6,10 +6,11 @@ let redis = require('redis');
 let redis_sub_client = redis.createClient('redis://redis-4-0:6379');
 
 const CHANNEL = 'channel-for-demos';
+const PORT = process.env.PORT || 3000;
 
 // Server
-server.listen(8001, function () {
-    console.log('Server listening on port %d...', 8001);
+server.listen(PORT, function () {
+    console.log('Server listening on port %d...', PORT);
 });
 
 // Socket.io

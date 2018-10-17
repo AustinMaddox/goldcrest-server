@@ -3,10 +3,11 @@ let io = require('socket.io')(server);
 
 const CHANNEL_QUESTIONS = 'channel-for-questions';
 const CHANNEL_COMMENTS = 'channel-for-comments';
+const PORT = process.env.PORT || 3000;
 
 // Server
-server.listen(8001, function () {
-    console.log('Server listening on port %d...', 8001);
+server.listen(PORT, function () {
+    console.log('Server listening on port %d...', PORT);
 });
 
 // Socket.io
